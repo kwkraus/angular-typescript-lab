@@ -9,7 +9,7 @@ This lab pins Angular and Angular CLI to **22.3.0**, the latest stable release w
 ```shell
 git clone https://github.com/kwkraus/angular-typescript-lab.git
 cd angular-typescript-lab
-npm install
+npm ci
 npm start
 ```
 
