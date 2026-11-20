@@ -14,5 +14,10 @@ jobs:
         with:
           node-version: '24'
       - run: npm install
+      - uses: actions/upload-artifact@v6
+        with:
+          name: dependency-lock
+          path: package-lock.json
+          retention-days: 1
       - run: npm run build
       - run: npm test
