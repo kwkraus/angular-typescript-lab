@@ -16,3 +16,16 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm test
+      - name: Smoke-test app startup
+        run: |
+          npm start -- --host 127.0.0.1 --port 4210 > server.log 2>&1 &
+          server=$!
+          trap 'kill "$server" 2>/dev/null || true' EXIT
+          trap 'cat server.log' ERR
+          host=http://127.0.0.1:4210
+          curl --retry 30 --retry-connrefused --retry-delay 1 -fsS "$host/lessons/startup" -o page.html
+          grep -q '<lab-root>' page.html
+          script=$(grep -oE 'src="[^"]*main\.js"' page.html | cut -d '"' -f 2)
+          test -n "$script"
+          curl -fsS "$host/${script#/}" -o main.js
+          test -s main.js
