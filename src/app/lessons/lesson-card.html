@@ -1,0 +1,11 @@
+<article class="card">
+  <p class="eyebrow">{{ completed() ? 'Complete' : 'To do' }}</p>
+  <h2><a [routerLink]="['/lessons', lesson().id]">{{ lesson().title }}</a></h2>
+  <p>{{ lesson().summary }}</p>
+  <button
+    type="button"
+    [attr.aria-label]="'Complete: ' + lesson().title"
+    [attr.aria-pressed]="completed()"
+    (click)="completionToggled.emit(lesson())"
+  >Complete</button>
+</article>

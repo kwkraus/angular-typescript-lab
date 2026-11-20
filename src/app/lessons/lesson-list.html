@@ -1,0 +1,18 @@
+<section class="intro">
+  <p class="eyebrow">Hands-on learning lab</p>
+  <h1>Learn Angular by tracing a small app</h1>
+  <p>Open a lesson, follow the code, and try the exercise. Your progress stays in this tab until you refresh.</p>
+</section>
+
+<ul class="lesson-grid" aria-label="Lessons">
+  @for (lesson of store.lessons; track lesson.id) {
+    <li>
+      <!-- Square brackets pass values down; parentheses listen for events up. -->
+      <lab-lesson-card
+        [lesson]="lesson"
+        [completed]="store.isComplete(lesson.id)"
+        (completionToggled)="store.toggle($event)"
+      />
+    </li>
+  }
+</ul>

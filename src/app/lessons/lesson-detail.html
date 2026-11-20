@@ -1,0 +1,23 @@
+<a routerLink="/lessons">Back to lessons</a>
+
+<!-- The alias narrows Lesson | undefined to Lesson inside the first branch. -->
+@if (lesson(); as current) {
+  <article class="card detail">
+    <p class="eyebrow">{{ store.isComplete(current.id) ? 'Complete' : 'To do' }}</p>
+    <h1>{{ current.title }}</h1>
+    <p>{{ current.summary }}</p>
+    <h2>Read the code</h2>
+    <p><code>{{ current.source }}</code></p>
+    <h2>Try it</h2>
+    <p>{{ current.exercise }}</p>
+    <button
+      type="button"
+      [attr.aria-label]="'Complete: ' + current.title"
+      [attr.aria-pressed]="store.isComplete(current.id)"
+      (click)="store.toggle(current)"
+    >Complete</button>
+  </article>
+} @else {
+  <h1>Lesson not found</h1>
+  <p>This URL matches the lesson route, but its ID isn't in the catalog.</p>
+}

@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="shell header-layout">
+    <nav aria-label="Main navigation">
+      <a routerLink="/lessons" routerLinkActive="current"
+        [routerLinkActiveOptions]="{ exact: true }" ariaCurrentWhenActive="page">
+        Angular TypeScript Lab
+      </a>
+    </nav>
+    <span role="status">{{ store.completedCount() }} of {{ store.lessons.length }} complete</span>
+  </div>
+</header>
+
+<main class="shell">
+  <!-- The shell stays mounted while the router swaps the page below. -->
+  <router-outlet></router-outlet>
+</main>
