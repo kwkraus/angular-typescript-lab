@@ -4,7 +4,7 @@ A small learning app you can read end to end before tackling a larger Angular co
 
 ## Run locally
 
-This lab pins Angular and Angular CLI to **22.3.0**, the latest stable release when checked on November 20, 2026 ([Angular release](https://github.com/angular/angular/releases/tag/v22.3.0), [CLI release](https://github.com/angular/angular-cli/releases/tag/v22.3.0)). The [official compatibility table](https://angular.dev/reference/versions) lists Node.js `^22.22.3 || ^24.15.0 || ^26.0.0` and TypeScript `>=6.0.0 <6.1.0`. Use Node 24.15.0 or a newer 24.x release if you want to use that LTS line. npm installs the local Angular CLI and TypeScript, so no global Angular CLI is needed.
+This lab pins Angular and Angular CLI to **22.2.5** for compatibility with the npm mirror. The [official compatibility table](https://angular.dev/reference/versions) lists Node.js `^22.22.3 || ^24.15.0 || ^26.0.0` and TypeScript `>=6.0.0 <6.1.0`. Use Node 24.15.0 or a newer 24.x release if you want to use that LTS line. npm installs the local Angular CLI and TypeScript, so no global Angular CLI is needed.
 
 ```shell
 git clone https://github.com/kwkraus/angular-typescript-lab.git
