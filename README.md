@@ -15,6 +15,8 @@ npm start
 
 Open [localhost:4200](http://localhost:4200). Run `npm test` for routing and progress tests, or `npm run build` for a production build and template type checking.
 
+If `npm ci` returns a `404` from an npm mirror, check whether it has the exact versions in `package-lock.json`. Browserslist is pulled in by Angular's build tooling to decide which browsers the output should support; it isn't a direct dependency of the app.
+
 ## Read the code in this order
 
 | Start here | What to look for |
